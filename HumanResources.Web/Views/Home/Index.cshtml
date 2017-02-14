@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Книжный магазин</title>
+</head>
+<body>
+    <div>
+        <h3>Распродажа книг</h3>
+        <table>
+            <tr>
+                <td><p>Номер</p></td>
+                <td><p>Фамилия</p></td>
+                <td><p>Имя</p></td>
+                <td><p>Отчество</p></td>
+                <td><p>Город</p></td>
+                <td><p>Дата старта</p></td>
+                <td><p>Дата увольнения</p></td>
+                <td><p>Мобильный телефон</p></td>
+                <td><p>Менеджер</p></td>
+                <td><p>Дата рождения</p></td>
+                <td><p>Должность</p></td>
+                <td colspan="3"><p>Действия</p></td>
+            </tr>
+            @foreach (var b in ViewBag.Employees)
+            {
+                <tr>
+                    <td><p>@b.Id</p></td>
+                    <td><p>@b.Surname</p></td>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Patronymic</p></td>
+                    <td><p>@b.CityId</p></td>
+                    <td><p>@b.StartDate.ToString("dd MMM yyyy")</p></td>
+                    <td><p>@(b.EndDate != null ? b.EndDate.ToString("dd MMM yyyy") : "-")</p></td>
+                    <td><p>@b.MobilePhone</p></td>
+                    <td><p>@b.ManagerName</p></td>
+                    <td><p>@(b.DateOfBirth != null ? b.DateOfBirth.ToString("dd MMM yyyy") : "-")</p></td>
+                    <td><p>@b.Position</p></td>
+                    
+                    <td><p><a href="/Home/View/@b.Id">Просмотр</a></p></td>
+                    <td><p><a href="/Home/Edit/@b.Id">Редактировать</a></p></td>
+                    <td><p><a href="/Home/Delete/@b.Id">Удалить</a></p></td>
+                </tr>
+            }
+        </table>
+        <p><a href="/Home/Create">Создать сотрудника</a></p>
+    </div>
+</body>
+</html>
+
