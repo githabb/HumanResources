@@ -77,21 +77,36 @@
                 </tr>
                 <tr>
                     <td>
-                        <p>Дата увольнения: </p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.EndDate):</div></p>
                     </td>
-                    <td>@Html.EditorFor(m => m.EndDate, new {htmlAttributes = new {@class = "datepicker"}})</td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.EditorFor(m => m.EndDate, new { htmlAttributes = new { @class = "datepicker" } })
+                            @Html.ValidationMessageFor(model => model.EndDate)
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>Телефон: </p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.Phone):</div></p>
                     </td>
-                    <td>@Html.EditorFor(model => model.Phone)</td>
+                    <td>                     
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Phone)
+                            @Html.ValidationMessageFor(model => model.Phone)
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>Мобильный телефон: </p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.MobilePhone):</div></p>
                     </td>
-                    <td>@Html.EditorFor(model => model.MobilePhone)</td>
+                    <td>                        
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.MobilePhone)
+                            @Html.ValidationMessageFor(model => model.MobilePhone)
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -112,15 +127,25 @@
                 </tr>
                 <tr>
                     <td>
-                        <p>Дата рождения: </p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.DateOfBirth):</div> </p>
                     </td>
-                    <td>@Html.EditorFor(m => m.DateOfBirth, new {htmlAttributes = new {@class = "datepicker"}})</td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.EditorFor(m => m.DateOfBirth, new { htmlAttributes = new { @class = "datepicker" } })
+                            @Html.ValidationMessageFor(model => model.DateOfBirth)
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>Должность: </p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.Position):</div></p>
                     </td>
-                    <td>@Html.EditorFor(model => model.Position)</td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Position)
+                            @Html.ValidationMessageFor(model => model.Position)
+                        </div>
+                    </td>
                 </tr>
 
                 <tr><td colspan="2"><input type="submit" value="Сохранить"/> </td></tr>

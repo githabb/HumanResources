@@ -1,19 +1,23 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace HumanResources.Web.Models
 {
     public class EmployeeModel
     {
+        
         public int Id { get; set; }
 
         [Required]
+
         [Display(Name = "Город")]
         public int CityId { get; set; }
 
         public string CityName { get; set; }
 
         [Required]
+        
         [MaxLength(50)]
         [Display(Name = "Фамилия")]
         public string Surname { get; set; }
@@ -27,28 +31,40 @@ namespace HumanResources.Web.Models
         [Display(Name = "Отчество")]
         public string Patronymic { get; set; }
 
-        [MaxLength(200)]
+        
+        [StringLength(200, MinimumLength = 10, ErrorMessage = "Длина строки должна быть от 10 до 200 символов")]
         [Display(Name = "Адрес")]
         public string Address { get; set; }
 
         [Required]
+        
         [Display(Name = "Дата старта")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
 
+        [Display(Name = "Дата увольнения")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? EndDate { get; set; }
 
+        [MaxLength(15)]
+        [Display(Name = "Мобильный телефон")]
         public string MobilePhone { get; set; }
+
+        [MaxLength(15)]
+        [Display(Name = "Телефон")]
         public string Phone { get; set; }
+
         public int? ManagerId { get; set; }
 
         public string ManagerName { get; set; }
 
+        [Display(Name = "Дата рождения")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DateOfBirth { get; set; }
 
         [Required]
+        [MaxLength(200)]
+        [Display(Name = "Должность")]
         public string Position { get; set; }
 
 
