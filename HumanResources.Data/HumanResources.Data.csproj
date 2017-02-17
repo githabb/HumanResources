@@ -54,7 +54,6 @@
     <Compile Include="City.cs">
       <DependentUpon>HumanResourceModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>HumanResourceModel.tt</DependentUpon>
     </Compile>

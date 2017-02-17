@@ -11,6 +11,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Редактирование</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div>
@@ -21,36 +22,58 @@
             <table>
                 <tr>
                     <td>
-                        <p>Фамилия:</p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.Surname):</div></p>
                     </td>
-                    <td>@Html.EditorFor(model => model.Surname)</td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Surname)
+                            @Html.ValidationMessageFor(model => model.Surname)
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>Имя:</p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.Name):</div></p>
                     </td>
                     <td>
-                        @Html.EditorFor(model => model.Name)
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Name)
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>Отчество: </p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.Patronymic):</div></p>
                     </td>
-                    <td>@Html.EditorFor(model => model.Patronymic)</td>
-
+                    <td>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Patronymic)
+                            @Html.ValidationMessageFor(model => model.Patronymic)
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>Город: </p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.CityId):</div></p>
                     </td>
-                    <td>@Html.DropDownListFor(model => model.CityId, ViewBag.CityList as SelectList)</td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.DropDownListFor(model => model.CityId, ViewBag.CityList as SelectList)
+                            @Html.ValidationMessageFor(model => model.CityId)
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>Дата старта: </p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.StartDate):</div></p>
                     </td>
-                    <td>@Html.EditorFor(m => m.StartDate, new {htmlAttributes = new {@class = "datepicker"}})</td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.EditorFor(m => m.StartDate, new { htmlAttributes = new { @class = "datepicker" } })
+                            @Html.ValidationMessageFor(model => model.StartDate)
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -72,9 +95,14 @@
                 </tr>
                 <tr>
                     <td>
-                        <p>Адрес: </p>
+                        <p><div class="editor-label">@Html.LabelFor(model => model.Address):</div></p>
                     </td>
-                    <td>@Html.EditorFor(model => model.Address)</td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Address)
+                            @Html.ValidationMessageFor(model => model.Address)
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>
