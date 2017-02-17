@@ -225,8 +225,7 @@ namespace HumanResources.Web.Controllers
         public ActionResult Create()
         {
             LoadDropDowns(null);
-
-
+            
             return View();
         }
 
