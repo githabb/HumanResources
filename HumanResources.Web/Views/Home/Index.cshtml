@@ -8,11 +8,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Книжный магазин</title>
+    <title>Сотрудники</title>
 </head>
 <body>
     <div>
-        <h3>Распродажа книг</h3>
+        <h3>Сотрудники</h3>
         <table>
             <tr>
                 <td><p>Номер</p></td>
@@ -43,13 +43,14 @@
                     <td><p>@(b.DateOfBirth != null ? b.DateOfBirth.ToString("dd MMM yyyy") : "-")</p></td>
                     <td><p>@b.Position</p></td>
                     
-                    <td><p><a href="/Home/View/@b.Id">Просмотр</a></p></td>
-                    <td><p><a href="/Home/Edit/@b.Id">Редактировать</a></p></td>
-                    <td><p><a href="/Home/Delete/@b.Id">Удалить</a></p></td>
+                    <td><p>@Html.ActionLink("Просмотр", "Display", new { id = b.Id })</p></td>
+                    <td><p>@Html.ActionLink("Редактировать", "Edit", new { id = b.Id })</p></td>
+                    <td><p>@Html.ActionLink("Удалить", "Delete", new { id = b.Id },
+                            new { onclick = "return confirm('Удалить сотрудника с id = " + @b.Id + "?')" })</p></td>
                 </tr>
             }
         </table>
-        <p><a href="/Home/Create">Создать сотрудника</a></p>
+        <p>@Html.ActionLink("Создать сотрудника", "Create")</p>
     </div>
 </body>
 </html>
