@@ -1,17 +1,7 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Сотрудники";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Сотрудники</title>
-    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-</head>
-<body>
     <div>
         <h3>Сотрудники</h3>
         <table>
@@ -36,7 +26,7 @@
                     <td><p>@b.Surname</p></td>
                     <td><p>@b.Name</p></td>
                     <td><p>@b.Patronymic</p></td>
-                    <td><p>@b.CityId</p></td>
+                    <td><p>@b.CityName</p></td>
                     <td><p>@b.StartDate.ToString("dd MMM yyyy")</p></td>
                     <td><p>@(b.EndDate != null ? b.EndDate.ToString("dd MMM yyyy") : "-")</p></td>
                     <td><p>@b.MobilePhone</p></td>
@@ -53,6 +43,5 @@
         </table>
         <p>@Html.ActionLink("Создать сотрудника", "Create")</p>
     </div>
-</body>
-</html>
+
 

@@ -10,14 +10,12 @@ namespace HumanResources.Web.Models
         public int Id { get; set; }
 
         [Required]
-
         [Display(Name = "Город")]
         public int CityId { get; set; }
 
         public string CityName { get; set; }
 
         [Required]
-        
         [MaxLength(50)]
         [Display(Name = "Фамилия")]
         public string Surname { get; set; }
@@ -31,13 +29,12 @@ namespace HumanResources.Web.Models
         [Display(Name = "Отчество")]
         public string Patronymic { get; set; }
 
-        
-        [StringLength(200, MinimumLength = 10, ErrorMessage = "Длина строки должна быть от 10 до 200 символов")]
+
+        [MaxLength(200)]
         [Display(Name = "Адрес")]
         public string Address { get; set; }
 
         [Required]
-        
         [Display(Name = "Дата старта")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }

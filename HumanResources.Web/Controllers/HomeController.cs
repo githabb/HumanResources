@@ -89,6 +89,7 @@ namespace HumanResources.Web.Controllers
                     {
                         Id = b.Id,
                         CityId = b.CityId,
+                        CityName = b.City.Name,
                         Name = b.Name,
                         Surname = b.Surname,
                         Patronymic = b.Patronymic,
